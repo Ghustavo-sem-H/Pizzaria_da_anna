@@ -1,0 +1,18 @@
+{% extends 'usuario/paginas/base.html' %}
+{% block conteudo %}
+<h1>Página de login.html</h1>
+<section>
+    <form action="{% url 'usuario:login' %}" method="POST">
+        {% csrf_token %}
+        {% form campo in formulario.visible_fields %}
+        <div>
+            <label for="{{ campo.id_for_label }}"><b>{{ campo.label }}</b></label>
+            {{ campo }}
+        </div>
+        {% endfor %}
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</section>
+{% endblock conteudo %}
