@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza da Anna</title>
+    {% block 'head' %} {% endblock %}
+    <title>Pizza da Anna:{% block 'titulo' %} {% endblock %}</title>
     {%load static %}
 </head>
 
 <body>
+    {% block conteudo %} {% endblock%}
     <h1>{{calabresa}}</h1>
     <h2>{{peperoni}}</h2>
 </body>
-
 </html>
