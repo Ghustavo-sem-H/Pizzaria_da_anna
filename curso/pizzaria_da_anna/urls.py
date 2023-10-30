@@ -6,5 +6,7 @@ urlpatterns = [
     path('', views.pizza),
     path('login/', views.login),
     path('cadastrar/', views.cadastrar),
+    path('registro/', views.registrar_pizza)
+
 
 ]

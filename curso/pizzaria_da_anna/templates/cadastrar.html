@@ -1,14 +1,15 @@
 {% extends "__base.html" %}
 
 {% block conteudo %}
-<form action=# method="post">
-       <label for='nome'> nome</label>
+   <form method="POST" action="{% url 'registrar_pizza.html' %}">
+      {% csrf_token %}
+      <label for='nome'> nome</label>
 
-    <input type="text" name='nome' placeholder="Nome"></input>
-   <br>
+      <input type="text" name='nome' placeholder="Nome"></input>
+      <br>
       <label for='preco'> preco</label>
 
-   <input type="number" name='preco' placeholder="preco"></input>
-   <input type="submit" value="OK">
-</form> 
+      <input type="number" name='preco' placeholder="preco"></input>
+      <input type="submit" value="OK">
+   </form> 
 {% endblock %}

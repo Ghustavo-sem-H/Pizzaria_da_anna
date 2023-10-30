@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.template import loader
-from django.http import HttpResponse
-#from .forms import Cadastrar_Pizza
-from .models import Pizza
+from .forms import PizzaForms
 
 
 
@@ -17,5 +15,12 @@ def login(request):
 
 def cadastrar(request):
     return render(request, 'cadastrar.html')
+
+def registrar_pizza(request):
+    name = request.POST.get('nome')
+    preco = request.POST.get('preco')
+    pizza= Pizza(nome=nome,preco=preco)
+    pizza.save()
+    return redirect('cadastrar/#')
 
                   
