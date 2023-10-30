@@ -1,7 +1,7 @@
 {% extends "__base.html" %}
 
 {% block conteudo %}
-<form id='form_cadastrar'>
+<form action=# method="post">
        <label for='nome'> nome</label>
 
     <input type="text" name='nome' placeholder="Nome"></input>
@@ -9,6 +9,6 @@
       <label for='preco'> preco</label>
 
    <input type="number" name='preco' placeholder="preco"></input>
-   <submit 
+   <input type="submit" value="OK">
 </form> 
 {% endblock %}
