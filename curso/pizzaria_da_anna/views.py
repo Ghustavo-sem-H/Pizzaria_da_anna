@@ -17,10 +17,13 @@ def cadastrar(request):
     return render(request, 'cadastrar.html')
 
 def registrar_pizza(request):
-    name = request.POST.get('nome')
-    preco = request.POST.get('preco')
-    pizza= Pizza(nome=nome,preco=preco)
-    pizza.save()
-    return redirect('cadastrar/#')
+    if request.method == 'POST':
+        form = PizzaForms(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('cadastrar.html')
+    else:
+        form = PizzaForms()
+    return render(request, 'registrar_pizza.html', {'form': form})
 
                   
